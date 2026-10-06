@@ -1,0 +1,157 @@
+@import "tailwindcss";
+
+@theme {
+  /* ---- Brand palette (only these color families are used) ---- */
+  --color-navy: #0b2545;
+  --color-blue: #13315c;
+  --color-gold: #c9a24b;
+  --color-teal: #1b998b;
+  --color-ivory: #fafaf7;
+  --color-mist: #f1f4f8;
+  --color-ink: #1a1a1a;
+  --color-muted: #5b6472;
+
+  /* ---- Typography (variables injected by next/font) ---- */
+  --font-heading: var(--font-playfair), Georgia, "Times New Roman", serif;
+  --font-body: var(--font-inter), ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-number: var(--font-poppins), var(--font-inter), ui-sans-serif, sans-serif;
+
+  /* ---- Soft layered shadows ---- */
+  --shadow-soft: 0 24px 60px -24px rgb(11 37 69 / 0.18);
+  --shadow-card: 0 10px 30px -14px rgb(11 37 69 / 0.16);
+  --shadow-lift: 0 30px 50px -22px rgb(11 37 69 / 0.32);
+  --shadow-gold: 0 16px 40px -14px rgb(201 162 75 / 0.45);
+
+  /* ---- Radii (12-16px) ---- */
+  --radius-soft: 12px;
+  --radius-card: 16px;
+
+  /* ---- Background images ---- */
+  --background-image-chevron-down: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='16'%20height='16'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%235B6472'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'%3E%3Cpath%20d='m6%209%206%206%206-6'/%3E%3C/svg%3E");
+
+  /* ---- Keyframes ---- */
+  --animate-marquee: marquee 44s linear infinite;
+  --animate-float: float 7s ease-in-out infinite;
+  --animate-spin-slow: spin 14s linear infinite;
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-14px);
+    }
+  }
+}
+
+/* ---------- Base ---------- */
+@layer base {
+  html {
+    scroll-behavior: auto; /* Lenis owns smooth scrolling */
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-ivory font-body text-muted antialiased;
+    line-height: 1.6;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-heading text-ink;
+    line-height: 1.15;
+    text-wrap: balance;
+  }
+
+  ::selection {
+    background: var(--color-gold);
+    color: var(--color-navy);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  /* Lenis smooth-scroll recommended styles */
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+}
+
+/* ---------- Reusable component classes ---------- */
+@layer components {
+  /* Animated underline for nav & inline links */
+  .link-underline {
+    position: relative;
+  }
+  .link-underline::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    height: 2px;
+    width: 100%;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .link-underline:hover::after,
+  .link-underline[aria-current="page"]::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  /* Gold shimmer used on primary CTA hover */
+  .btn-sheen {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+  }
+  .btn-sheen::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(
+      105deg,
+      transparent 40%,
+      rgb(255 255 255 / 0.35) 50%,
+      transparent 60%
+    );
+    transform: translateX(-120%);
+    transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .btn-sheen:hover::before {
+    transform: translateX(120%);
+  }
+
+  /* Fine hairline used between footer rows */
+  .hairline {
+    border-color: rgb(250 250 247 / 0.12);
+  }
+}
