@@ -12,7 +12,6 @@ export const SITE = {
 
   /** Canonical production domain (used for SEO, sitemap, OG URLs) */
   domain: "https://achratexports.com",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://achratexports.com",
 
   contactPerson: "Yash Jagdishbhai Lunagariya",
   contactRole: "Head",
@@ -23,7 +22,6 @@ export const SITE = {
 
   // --- Verified credentials (as provided by owner) ---
   gst: "24BLSPL5948Q1Z0",
-  iec: process.env.NEXT_PUBLIC_IEC ?? "", // set NEXT_PUBLIC_IEC when issued
   credentials: [
     "FIEO Registered",
     "GST Verified",
@@ -42,26 +40,7 @@ export const SITE = {
   },
   geo: { lat: 21.2094, lng: 72.8317 }, // A K Road, Surat (approx.)
 
-  // --- CONTACT PLACEHOLDERS: replace in .env (see .env.example) ---
-  phone: process.env.NEXT_PUBLIC_PHONE ?? "+91 99999 99999",
-  whatsapp: process.env.NEXT_PUBLIC_WHATSAPP ?? "919999999999",
-  email: process.env.NEXT_PUBLIC_EMAIL ?? "sales@achratexports.com",
-
-  socials: {
-    instagram: process.env.NEXT_PUBLIC_INSTAGRAM ?? "",
-    linkedin: process.env.NEXT_PUBLIC_LINKEDIN ?? "",
-    facebook: process.env.NEXT_PUBLIC_FACEBOOK ?? "",
-    youtube: process.env.NEXT_PUBLIC_YOUTUBE ?? "",
-  },
-
   hours: "Monday - Saturday · 10:00 AM - 7:00 PM IST",
 } as const;
 
 export const FULL_ADDRESS = `${SITE.address.line1}, ${SITE.address.line2}, ${SITE.address.city}, ${SITE.address.state} ${SITE.address.postalCode}, ${SITE.address.country}`;
-
-/** WhatsApp click-to-chat link (wa.me requires digits only) */
-export function whatsappLink(message?: string): string {
-  const digits = SITE.whatsapp.replace(/\D/g, "");
-  const base = `https://wa.me/${digits}`;
-  return message ? `${base}?text=${encodeURIComponent(message)}` : base;
-}

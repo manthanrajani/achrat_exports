@@ -20,7 +20,7 @@ export default function TermsPage() {
         {
           heading: "General",
           paragraphs: [
-            `This website is operated by ${SITE.name}, a sole proprietorship based in Surat, Gujarat, India. By browsing this website or submitting an enquiry, you accept these terms. This page is a generic template prepared for owner review.`,
+            `This website is operated by ${SITE.name}, a sole proprietorship based in Surat, Gujarat, India. By browsing this website, you accept these terms. This page is a generic template prepared for owner review.`,
           ],
         },
         {
@@ -32,7 +32,7 @@ export default function TermsPage() {
         {
           heading: "Quotations & orders",
           paragraphs: [
-            "An enquiry submitted through this website is not a purchase order. A binding agreement forms only when specifications, quantities, pricing, payment terms, Incoterms and timelines are confirmed in a proforma invoice or written contract and any agreed advance is received. Production timelines stated in such documents prevail over general information on this website.",
+            "Nothing on this website is a purchase order. A binding agreement forms only when specifications, quantities, pricing, payment terms, Incoterms and timelines are confirmed in a proforma invoice or written contract and any agreed advance is received. Production timelines stated in such documents prevail over general information on this website.",
           ],
         },
         {
@@ -62,7 +62,7 @@ export default function TermsPage() {
         {
           heading: "Contact",
           paragraphs: [
-            `Questions about these terms: email ${SITE.email} or call ${SITE.phone}.`,
+            `Questions about these terms: write to ${SITE.address.line1}, ${SITE.address.line2}, ${SITE.address.city}, ${SITE.address.state} ${SITE.address.postalCode}, India.`,
           ],
         },
       ]}

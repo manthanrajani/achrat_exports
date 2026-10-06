@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ArrowRight, ChevronDown, Mail, MapPin, Menu, Phone, X } from "lucide-react";
+import { ArrowRight, ChevronDown, MapPin, Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { BrandLogo } from "@/components/layout/brand-logo";
 import { CATEGORIES } from "@/data/categories";
@@ -55,7 +55,7 @@ export function Header() {
     };
   }, [drawerOpen]);
 
-  const lightTop = pathname === "/thank-you" || /^\/products\/[^/]+$/.test(pathname);
+  const lightTop = /^\/products\/[^/]+$/.test(pathname);
   const onLight = scrolled || lightTop;
   const dark = onLight; // dark text on a light header
   const isActive = (href: string) => (href === "/" ? pathname === "/" : pathname.startsWith(href));
@@ -130,10 +130,10 @@ export function Header() {
 
           <div className="flex items-center gap-3">
             <Link
-              href="/get-quote"
+              href="/contact"
               className="btn-sheen hidden min-h-11 items-center gap-2 rounded-soft bg-gold px-5 py-2.5 text-sm font-semibold text-navy shadow-gold transition-all duration-300 hover:-translate-y-0.5 hover:brightness-110 md:inline-flex"
             >
-              Get a Quote
+              Visit Us
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Link>
             <button
@@ -227,21 +227,15 @@ export function Header() {
           </nav>
 
           <div className="space-y-3 border-t border-ivory/10 px-6 py-6">
-            <a href={`mailto:${SITE.email}`} className="flex min-h-11 items-center gap-3 text-sm text-ivory/80">
-              <Mail className="h-4 w-4 text-gold" aria-hidden="true" /> {SITE.email}
-            </a>
-            <a href={`tel:${SITE.phone}`} className="flex min-h-11 items-center gap-3 text-sm text-ivory/80">
-              <Phone className="h-4 w-4 text-gold" aria-hidden="true" /> {SITE.phone}
-            </a>
             <p className="flex items-start gap-3 text-sm text-ivory/80">
               <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-gold" aria-hidden="true" />
               {SITE.address.city}, {SITE.address.state}, {SITE.address.country}
             </p>
             <Link
-              href="/get-quote"
+              href="/contact"
               className="btn-sheen mt-2 flex min-h-12 items-center justify-center gap-2 rounded-soft bg-gold px-5 py-3 font-semibold text-navy"
             >
-              Get a Quote <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              Visit Us <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Link>
           </div>
         </aside>

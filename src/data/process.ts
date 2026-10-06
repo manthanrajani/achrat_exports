@@ -14,7 +14,7 @@ export const EXPORT_PROCESS: ProcessStep[] = [
     step: 1,
     title: "Enquiry",
     description:
-      "Share your product, quantity, destination and customization needs through our quote form, email or WhatsApp. We respond with pricing, MOQ and lead time, typically within 1-2 business days.",
+      "Share your product, quantity, destination and customization needs. We respond with pricing, MOQ and lead time, typically within 1-2 business days.",
   },
   {
     step: 2,

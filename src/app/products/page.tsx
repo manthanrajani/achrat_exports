@@ -31,7 +31,7 @@ export default function ProductsPage() {
       <PageHero
         eyebrow="Our catalogue"
         title="Export-ready products across four categories"
-        description="Search or filter the range. Every item can be customized, and every card has a direct enquiry shortcut."
+        description="Search or filter the range. Every item can be customized."
         crumbs={[{ label: "Products" }]}
       />
 

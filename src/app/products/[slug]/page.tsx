@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, MessageCircle, PackageCheck, Quote, ShieldCheck, Sparkles, Truck } from "lucide-react";
+import { ArrowLeft, PackageCheck, Quote, ShieldCheck, Sparkles, Truck } from "lucide-react";
 import { Reveal, RevealGroup } from "@/components/animations/reveal";
 import { ProductGallery } from "@/components/sections/product-gallery";
 import { Breadcrumbs } from "@/components/ui/breadcrumbs";
@@ -10,7 +10,6 @@ import { Badge, Container, Section } from "@/components/ui/section";
 import { getCategory, type CategorySlug } from "@/data/categories";
 import { PRODUCTS, getProduct, getRelatedProducts } from "@/data/products";
 import { JsonLd, breadcrumbLd, pageMetadata, productLd } from "@/lib/seo";
-import { SITE, whatsappLink } from "@/config/site";
 import { formatINR } from "@/lib/utils";
 
 interface ProductPageProps {
@@ -44,7 +43,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
   const category = getCategory(product.category as CategorySlug);
   const related = getRelatedProducts(product, 4);
-  const quoteHref = `/get-quote?product=${product.slug}&from=${encodeURIComponent(`/products/${product.slug}`)}`;
+  const quoteHref = "/contact";
 
   const specs: Array<[string, string]> = [
     ["Minimum Order Quantity", product.moq ?? "Flexible, on request"],
@@ -149,17 +148,8 @@ export default async function ProductPage({ params }: ProductPageProps) {
                     className="btn-sheen inline-flex min-h-12 items-center gap-2 rounded-soft bg-gold px-8 py-3.5 font-semibold text-navy shadow-gold transition-all duration-300 hover:-translate-y-0.5 hover:brightness-110"
                   >
                     <Quote className="h-4.5 w-4.5" aria-hidden="true" />
-                    Request Quote
+                    Visit the Office
                   </Link>
-                  <a
-                    href={whatsappLink(`Hello ${SITE.name}, I'm interested in the ${product.name}. Please share export pricing and MOQ details.`)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex min-h-12 items-center gap-2.5 rounded-soft border border-navy/20 px-8 py-3.5 font-semibold text-navy transition-all duration-300 hover:-translate-y-0.5 hover:border-teal hover:text-teal"
-                  >
-                    <MessageCircle className="h-4.5 w-4.5" aria-hidden="true" />
-                    WhatsApp
-                  </a>
                 </div>
                 <ul className="mt-7 grid gap-3 sm:grid-cols-3">
                   {[

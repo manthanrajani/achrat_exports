@@ -65,7 +65,7 @@ export default function CustomDesignPage() {
                 receive.
               </p>
               <div className="mt-8">
-                <Button href="/get-quote?category=Ceramic%20Crockery" variant="primary">
+                <Button href="/contact" variant="primary">
                   Brief Us on Your Design
                 </Button>
               </div>

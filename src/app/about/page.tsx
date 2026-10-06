@@ -129,7 +129,7 @@ export default function AboutPage() {
                     </div>
                   ))}
                 </dl>
-                <Button href="/get-quote" variant="gold" className="mt-8 w-full">
+                <Button href="/contact" variant="gold" className="mt-8 w-full">
                   Work With Us
                 </Button>
               </aside>

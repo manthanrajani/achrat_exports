@@ -43,7 +43,7 @@ export const metadata: Metadata = {
   creator: SITE.name,
   publisher: SITE.name,
   robots: { index: true, follow: true },
-  formatDetection: { telephone: true, email: true },
+  formatDetection: { telephone: false, email: false },
   icons: {
     icon: [
       { url: "/icons/favicon-32x32.webp", sizes: "32x32", type: "image/webp" },

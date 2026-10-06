@@ -12,7 +12,7 @@ export const FAQS: Faq[] = [
   {
     question: "What is your minimum order quantity (MOQ)?",
     answer:
-      "We keep MOQs buyer-friendly. Bathroom accessories (stainless steel & brass) start from just 1 piece, and ceramic crockery follows a low, flexible MOQ depending on the design and customization involved. Share your target quantities in the enquiry form and we'll confirm the exact MOQ for your selection.",
+      "We keep MOQs buyer-friendly. Bathroom accessories (stainless steel & brass) start from just 1 piece, and ceramic crockery follows a low, flexible MOQ depending on the design and customization involved. Share your target quantities when you visit the office and we'll confirm the exact MOQ for your selection.",
   },
   {
     question: "Can you create custom or modified designs?",
@@ -27,7 +27,7 @@ export const FAQS: Faq[] = [
   {
     question: "What are your payment terms?",
     answer:
-      "Payment terms are confirmed with each order and depend on order size and relationship. We commonly work with advance plus balance against shipping documents, bank transfer (T/T) and letter of credit (L/C) where required. Tell us your preferred terms in the enquiry form and we'll confirm what works for your order.",
+      "Payment terms are confirmed with each order and depend on order size and relationship. We commonly work with advance plus balance against shipping documents, bank transfer (T/T) and letter of credit (L/C) where required. Tell us your preferred terms when you visit the office and we'll confirm what works for your order.",
   },
   {
     question: "Which countries do you ship to?",
@@ -67,6 +67,6 @@ export const FAQS: Faq[] = [
   {
     question: "How do I get a quote?",
     answer:
-      "Use the Get a Quote form on this website, or reach us directly by email or WhatsApp. Include the product category, quantities, destination country and whether you need a custom design. We typically respond within 1-2 business days.",
+      "Visit the Contact page for the Surat office address and business hours. Bring the product category, quantities, destination country and whether you need a custom design.",
   },
 ];

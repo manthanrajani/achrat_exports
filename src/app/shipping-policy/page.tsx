@@ -74,7 +74,7 @@ export default function ShippingPolicyPage() {
         {
           heading: "Questions",
           paragraphs: [
-            "For shipment-specific questions, contact us via the enquiry form, email or WhatsApp. Include your proforma or invoice reference for the fastest answer.",
+            "For shipment-specific questions, write to the office address on the Contact page and include your proforma or invoice reference.",
           ],
         },
       ]}

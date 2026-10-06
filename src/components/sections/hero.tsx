@@ -109,10 +109,10 @@ export function Hero() {
             </Link>
             <Link
               data-hero-cta
-              href="/get-quote"
+              href="/contact"
               className="inline-flex min-h-12 items-center gap-2 rounded-soft border border-ivory/30 px-7 py-3.5 font-semibold text-ivory transition-all duration-300 hover:-translate-y-0.5 hover:border-gold hover:text-gold"
             >
-              Get a Quote
+              Visit the Office
             </Link>
           </div>
 

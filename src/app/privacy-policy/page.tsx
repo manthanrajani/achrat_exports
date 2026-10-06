@@ -5,7 +5,7 @@ import { SITE } from "@/config/site";
 
 export const metadata: Metadata = pageMetadata({
   title: "Privacy Policy",
-  description: `How ${SITE.name} handles the personal details you share through our enquiry forms. Nothing is stored on this website.`,
+  description: `How ${SITE.name} handles this website. No forms, accounts, or database store personal details here.`,
   path: "/privacy-policy",
 });
 
@@ -14,7 +14,7 @@ export default function PrivacyPolicyPage() {
     <LegalPage
       eyebrow="Your privacy"
       title="Privacy Policy"
-      description="Plain-language summary of what we collect, why, and what we never do with it."
+      description="Plain-language summary of what this website does and does not collect."
       updated="January 2026"
       sections={[
         {
@@ -26,43 +26,43 @@ export default function PrivacyPolicyPage() {
         {
           heading: "What we collect",
           paragraphs: [
-            "When you submit our enquiry or contact form, we collect the details you type: your name, company, country, email address, phone/WhatsApp number, product interest, estimated quantity, timeframe, whether you need a custom design, and your message. We also record the page you enquired from, purely to answer you more accurately.",
+            "This website does not include a contact form, account signup, or any other place to submit personal details. Browsing the pages does not ask for your name, email address, or phone number.",
           ],
         },
         {
           heading: "How your information is used",
           paragraphs: [
-            "Your submission is delivered to our business inbox as an email so our export team can respond with a quotation. A short automated confirmation is sent to the email address you provide. That is the entire purpose for which your data is used: responding to your enquiry and, if you proceed, fulfilling your order.",
+            "Because this website does not collect personal details, there is no enquiry record to use, store, or send. Business conversations happen outside this website.",
           ],
         },
         {
           heading: "What we do NOT do",
           paragraphs: [
-            "This website has no database, no user accounts and no analytics trackers installed by us. Your enquiry is not stored on the website. We do not sell, rent or trade your personal information, and we do not add you to marketing lists without your explicit consent.",
+            "This website has no database, no user accounts and no analytics trackers installed by us. We do not sell, rent or trade personal information, and we do not add visitors to marketing lists.",
           ],
         },
         {
           heading: "Third-party services",
           paragraphs: [
-            "Form emails are delivered through our chosen email provider (SMTP or Resend). The embedded map on our Contact page is provided by Google, which may set its own cookies when you interact with it. WhatsApp links open the WhatsApp service, which has its own privacy policy. Cloudflare Turnstile may be used occasionally to verify that form submissions are human.",
+            "The embedded map on our Contact page is provided by Google, which may set its own cookies when you interact with it.",
           ],
         },
         {
           heading: "Data retention & security",
           paragraphs: [
-            "Enquiry emails are retained in our business mailbox for as long as needed to serve you and meet record-keeping obligations. We apply reasonable administrative and technical safeguards; however, no internet transmission can be guaranteed 100% secure.",
+            "This website does not keep a mailbox or a database of visitor details. We apply reasonable administrative and technical safeguards to the site itself; however, no internet connection can be guaranteed 100% secure.",
           ],
         },
         {
           heading: "Your rights",
           paragraphs: [
-            "You may ask us at any time what personal information we hold about you, request a correction, or ask us to delete it. Simply email us using the contact details below and we will act within a reasonable timeframe.",
+            "This website does not hold a file of personal information collected through its pages. Questions about that can be sent in writing to the office address below.",
           ],
         },
         {
           heading: "Contact",
           paragraphs: [
-            `Questions about this policy? Contact ${SITE.contactPerson} at ${SITE.email} or ${SITE.phone}, or write to ${SITE.address.line1}, ${SITE.address.line2}, ${SITE.address.city}, ${SITE.address.state} ${SITE.address.postalCode}, India.`,
+            `Questions about this policy? Write to ${SITE.contactPerson} at ${SITE.address.line1}, ${SITE.address.line2}, ${SITE.address.city}, ${SITE.address.state} ${SITE.address.postalCode}, India.`,
           ],
         },
       ]}

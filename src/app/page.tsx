@@ -11,7 +11,6 @@ import { GlobalReachSection } from "@/components/sections/global-reach-section";
 import { TestimonialsSection } from "@/components/sections/testimonials-section";
 import { FaqPreview } from "@/components/sections/faq-preview";
 import { CtaBanner } from "@/components/sections/cta-banner";
-import { EnquiryStrip } from "@/components/sections/enquiry-strip";
 import { pageMetadata } from "@/lib/seo";
 
 const HOME_TITLE = "Achrat Exports | Ceramic Crockery & Bathroom Accessories Exporter from Surat, India";
@@ -50,7 +49,6 @@ export default function HomePage() {
       <TestimonialsSection />
       <FaqPreview />
       <CtaBanner />
-      <EnquiryStrip />
     </>
   );
 }

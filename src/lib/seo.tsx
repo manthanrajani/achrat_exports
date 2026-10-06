@@ -58,8 +58,6 @@ export function organizationLd() {
     description: SITE.description,
     slogan: SITE.tagline,
     foundingDate: "2024-06",
-    email: SITE.email,
-    telephone: SITE.phone,
     address: {
       "@type": "PostalAddress",
       streetAddress: `${SITE.address.line1}, ${SITE.address.line2}`,
@@ -72,12 +70,9 @@ export function organizationLd() {
       "@type": "ContactPoint",
       contactType: "sales",
       name: `${SITE.contactPerson} (${SITE.contactRole})`,
-      telephone: SITE.phone,
-      email: SITE.email,
       areaServed: "Worldwide",
       availableLanguage: ["English", "Hindi", "Gujarati"],
     },
-    sameAs: [SITE.socials.instagram, SITE.socials.linkedin, SITE.socials.facebook, SITE.socials.youtube],
   };
 }
 
@@ -89,8 +84,6 @@ export function localBusinessLd() {
     name: SITE.name,
     image: absoluteUrl(OG_COVER),
     url: SITE.domain,
-    email: SITE.email,
-    telephone: SITE.phone,
     priceRange: "₹₹",
     address: {
       "@type": "PostalAddress",

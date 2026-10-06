@@ -9,7 +9,7 @@ import { Badge } from "@/components/ui/section";
 /* ------------------------------- ProductCard ---------------------------- */
 
 export function ProductCard({ product, priority = false }: { product: Product; priority?: boolean }) {
-  const enquiryHref = `/get-quote?product=${product.slug}&category=${product.category}`;
+  const enquiryHref = "/contact";
   return (
     <article className="group relative flex h-full flex-col overflow-hidden rounded-card border border-navy/8 bg-white shadow-card transition-all duration-500 hover:-translate-y-2 hover:shadow-lift">
       <Link
@@ -63,7 +63,7 @@ export function ProductCard({ product, priority = false }: { product: Product; p
             href={enquiryHref}
             className="btn-sheen inline-flex min-h-11 flex-1 items-center justify-center rounded-soft bg-gold px-4 py-2.5 text-sm font-semibold text-navy transition-all duration-300 hover:brightness-110"
           >
-            Enquire Now
+            Visit Office
           </Link>
           <Link
             href={`/products/${product.slug}`}

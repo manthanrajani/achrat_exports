@@ -43,8 +43,8 @@ export default function FaqPage() {
               <Button href="/contact" variant="primary">
                 Ask Us Directly
               </Button>
-              <Button href="/get-quote" variant="outline">
-                Get a Quote
+              <Button href="/contact" variant="outline">
+                Visit the Office
               </Button>
             </div>
           </Reveal>

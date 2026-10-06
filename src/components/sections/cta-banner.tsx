@@ -2,10 +2,9 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, MessageCircle } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { useRef } from "react";
 import { gsap, prefersReducedMotion, useGSAP } from "@/lib/gsap";
-import { SITE, whatsappLink } from "@/config/site";
 import { photo } from "@/data/media";
 
 const BANNER_IMAGE = photo("15346128");
@@ -63,25 +62,15 @@ export function CtaBanner() {
             Ready to import from a partner who treats your order like their own?
           </h2>
           <p className="mt-5 leading-relaxed text-ivory/75">
-            Tell us the product, quantity and destination. Our export team will come back with pricing, MOQ and lead
-            time, typically within 1-2 business days.
+            The Surat office address, hours and map are on the contact page.
           </p>
           <div className="mt-9 flex flex-wrap gap-4">
             <Link
-              href="/get-quote"
+              href="/contact"
               className="btn-sheen inline-flex min-h-12 items-center gap-2 rounded-soft bg-gold px-8 py-3.5 font-semibold text-navy shadow-gold transition-all duration-300 hover:-translate-y-0.5 hover:brightness-110"
             >
-              Get a Free Quote <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              Visit the Office <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Link>
-            <a
-              href={whatsappLink(`Hello ${SITE.name}, I'd like a quote for a bulk order.`)}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex min-h-12 items-center gap-2.5 rounded-soft border border-ivory/30 px-8 py-3.5 font-semibold text-ivory transition-all duration-300 hover:-translate-y-0.5 hover:border-teal hover:text-teal"
-            >
-              <MessageCircle className="h-4.5 w-4.5" aria-hidden="true" />
-              WhatsApp Us
-            </a>
           </div>
         </div>
       </div>
