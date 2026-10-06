@@ -2,8 +2,17 @@
 
 import Lenis from "lenis";
 import { usePathname } from "next/navigation";
-import { useEffect } from "react";
+import { useEffect, useLayoutEffect, useRef } from "react";
 import { ScrollTrigger, gsap, prefersReducedMotion } from "@/lib/gsap";
+
+function resetToTop(lenis: Lenis | null) {
+  if (typeof window === "undefined") return;
+  if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+  // Lenis owns scrolling, so window.scrollTo alone leaves the next page mid-way.
+  lenis?.scrollTo(0, { immediate: true, force: true });
+  window.scrollTo(0, 0);
+  ScrollTrigger.refresh();
+}
 
 /**
  * Lenis smooth scrolling synced with GSAP's ticker and ScrollTrigger.
@@ -12,6 +21,7 @@ import { ScrollTrigger, gsap, prefersReducedMotion } from "@/lib/gsap";
  */
 export function SmoothScroll({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
+  const lenisRef = useRef<Lenis | null>(null);
 
   useEffect(() => {
     if (prefersReducedMotion()) return;
@@ -23,6 +33,7 @@ export function SmoothScroll({ children }: { children: React.ReactNode }) {
     });
 
     lenis.on("scroll", ScrollTrigger.update);
+    lenisRef.current = lenis;
 
     // Expose for "back to top" buttons.
     (window as unknown as { __lenis?: Lenis }).__lenis = lenis;
@@ -46,13 +57,19 @@ export function SmoothScroll({ children }: { children: React.ReactNode }) {
       window.clearTimeout(timeout);
       window.removeEventListener("load", refresh);
       gsap.ticker.remove(raf);
+      lenisRef.current = null;
       lenis.destroy();
     };
   }, []);
 
+  useLayoutEffect(() => {
+    resetToTop(lenisRef.current);
+  }, [pathname]);
+
   useEffect(() => {
-    window.scrollTo(0, 0);
-    ScrollTrigger.refresh();
+    resetToTop(lenisRef.current);
+    const frame = requestAnimationFrame(() => resetToTop(lenisRef.current));
+    return () => cancelAnimationFrame(frame);
   }, [pathname]);
 
   return <>{children}</>;
