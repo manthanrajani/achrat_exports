@@ -42,7 +42,7 @@ export function PageHero({ eyebrow, title, description, crumbs, image }: PageHer
   );
 
   return (
-    <section ref={ref} className="relative overflow-hidden bg-navy pb-16 pt-32 text-ivory sm:pb-20 sm:pt-36">
+    <section ref={ref} data-page-intro className="relative overflow-hidden bg-navy pb-16 pt-32 text-ivory sm:pb-20 sm:pt-36">
       <div aria-hidden="true" className="pointer-events-none absolute inset-0">
         {image && (
           <div className="absolute inset-[-16%]">

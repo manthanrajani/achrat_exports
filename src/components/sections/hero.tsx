@@ -63,18 +63,24 @@ export function Hero() {
   );
 
   return (
-    <section ref={ref} className="relative overflow-hidden bg-navy text-ivory lg:flex lg:h-dvh lg:max-h-dvh lg:flex-col" aria-label="Welcome">
+    <section ref={ref} data-page-intro className="relative overflow-hidden bg-navy text-ivory lg:flex lg:h-dvh lg:max-h-dvh lg:flex-col" aria-label="Welcome">
       {/* Ambient decor */}
       <div aria-hidden="true" className="pointer-events-none absolute inset-0">
         <div className="absolute -left-40 -top-40 h-[34rem] w-[34rem] rounded-full bg-gold/10 blur-3xl" />
         <div className="absolute -bottom-52 right-[-8rem] h-[30rem] w-[30rem] rounded-full bg-blue/60 blur-3xl" />
         <div className="absolute inset-0 opacity-[0.05] [background-image:radial-gradient(circle_at_1px_1px,#FAFAF7_1px,transparent_0)] [background-size:38px_38px]" />
-        <p className="absolute -right-8 top-1/2 hidden -translate-y-1/2 rotate-90 font-heading text-[9rem] font-bold tracking-[0.3em] text-ivory/[0.04] xl:block">
-          ACHRAT
-        </p>
       </div>
 
-      <div className="relative mx-auto grid w-full max-w-[1280px] gap-14 px-5 pb-24 pt-32 sm:px-8 lg:h-full lg:min-h-0 lg:flex-1 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-8 lg:px-10 lg:pb-14 lg:pt-24">
+      <p
+        aria-hidden="true"
+        className="pointer-events-none absolute right-3 top-1/2 z-20 hidden -translate-y-1/2 select-none lg:block xl:right-6"
+      >
+        <span className="block bg-gradient-to-b from-ivory via-ivory/80 to-gold bg-clip-text font-heading text-[clamp(3.6rem,9vh,6.2rem)] font-semibold leading-none tracking-[0.38em] text-transparent drop-shadow-[0_10px_28px_rgba(11,37,69,0.45)] [writing-mode:vertical-rl]">
+          ACHRAT
+        </span>
+      </p>
+
+      <div className="relative z-10 mx-auto grid w-full max-w-[1280px] gap-14 px-5 pb-24 pt-32 sm:px-8 lg:h-full lg:min-h-0 lg:max-w-[1200px] lg:flex-1 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-8 lg:px-8 lg:pb-14 lg:pr-16 lg:pt-24 xl:pr-20">
         {/* Copy */}
         <div>
           <p data-hero-eyebrow className="flex items-center gap-3 font-number text-[11px] font-semibold uppercase tracking-[0.26em] text-gold">

@@ -4,6 +4,7 @@ import { ArrowUp } from "lucide-react";
 import { useRef } from "react";
 import { gsap, useGSAP } from "@/lib/gsap";
 import { SITE, whatsappLink } from "@/config/site";
+import { ScrollStatusBar, useStatusBarVisible } from "@/components/layout/scroll-status-bar";
 
 function scrollToTop() {
   const lenis = (window as unknown as { __lenis?: { scrollTo: (t: number, o?: { duration?: number }) => void } }).__lenis;
@@ -34,8 +35,11 @@ export function ScrollProgress() {
   );
 }
 
-/** Floating WhatsApp button. Visible on every page. */
+/** Floating WhatsApp button. Steps aside while the status bar is on screen. */
 function WhatsAppFloat() {
+  const barVisible = useStatusBarVisible();
+  if (barVisible) return null;
+
   return (
     <a
       href={whatsappLink(`Hello ${SITE.name}, I'd like to discuss an export order.`)}
@@ -60,6 +64,7 @@ export function FloatingWidgets() {
   return (
     <>
       <ScrollProgress />
+      <ScrollStatusBar />
       <WhatsAppFloat />
     </>
   );

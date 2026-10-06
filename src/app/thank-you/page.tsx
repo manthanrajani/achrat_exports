@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function ThankYouPage() {
   return (
-    <Section className="flex min-h-[70dvh] items-center pt-28 lg:pt-32">
+    <Section className="flex min-h-[70dvh] items-center pt-28 lg:pt-32" pageIntro>
       <Container className="max-w-2xl text-center">
         <span className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-teal/10">
           <CheckCircle2 className="h-10 w-10 text-teal" aria-hidden="true" />

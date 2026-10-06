@@ -16,12 +16,15 @@ interface SectionProps {
   tone?: "ivory" | "mist" | "navy";
   id?: string;
   noPadding?: boolean;
+  /** Marks the opening block used by the floating status bar. */
+  pageIntro?: boolean;
 }
 
-export function Section({ children, className, tone = "ivory", id, noPadding = false }: SectionProps) {
+export function Section({ children, className, tone = "ivory", id, noPadding = false, pageIntro = false }: SectionProps) {
   return (
     <section
       id={id}
+      {...(pageIntro ? { "data-page-intro": "" } : {})}
       className={cn(
         noPadding ? "" : "py-20 sm:py-24 lg:py-28",
         tone === "ivory" && "bg-ivory",

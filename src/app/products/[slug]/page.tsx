@@ -69,7 +69,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
         ]}
       />
 
-      <Section className="pt-28 lg:pt-32" noPadding={false}>
+      <Section className="pt-28 lg:pt-32" noPadding={false} pageIntro>
         <Container>
           <Reveal variant="fade">
             <div className="mb-8 flex flex-wrap items-center justify-between gap-4">
